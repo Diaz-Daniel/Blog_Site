@@ -2,9 +2,7 @@ const router = require("express").Router();
 const withAuth = require("../utils/auth");
 
 router.get("/", withAuth, (req, res) => {
-  res.render("hello", {
-    layout: "dashboard",
-  });
+  res.render("dashboard");
 });
 
 module.exports = router;
