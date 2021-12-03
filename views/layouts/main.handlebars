@@ -25,7 +25,7 @@
           <a class="nav-link" href="/login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Logout</a>
+          <a class="nav-link"  id= "logout" href="/">Logout</a>
         </li>
       </ul>
     </nav>
@@ -43,5 +43,8 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+      {{#if logged_in}}
+  <script src="/js/logout.js"></script>
+  {{/if}}
   </body>
 </html>
