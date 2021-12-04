@@ -7,20 +7,15 @@ router.get("/", async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const blogData = await Blog.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
+      include: [User],
     });
 
     // Serialize data so the template can read it
-    const blog = blogData.map((blog) => blog.get({ plain: true }));
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
     // Pass serialized data and session flag into template
     res.render("homepage", {
-      blog,
+      blogs,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
@@ -31,18 +26,13 @@ router.get("/", async (req, res) => {
 router.get("/blog/:id", async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["username"],
-        },
-      ],
+      include: [User],
     });
 
     const blog = blogData.get({ plain: true });
 
     res.render("homepage", {
-      ...blog,
+      blog,
       logged_in: req.session.logged_in,
     });
   } catch (err) {

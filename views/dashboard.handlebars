@@ -1,14 +1,8 @@
-<form class="form new-blog-post">
-  <div class="form-group">
-    <label for="blog-title">Write New Post</label>
-    <input type="text" class="form-control" id="blog-title" placeholder="Title">
+<div>
+  {{#each blogs}}
+  <a href="/dashboard/edit/{{id}}">
+    <p> {{title}}</p>
+    <p> {{body}}</p>
+    </a>
+  {{/each}}
   </div>
-  <div class="form-group">
-    <label for="blog-text">Text Body</label>
-    <textarea class="form-control" id="blog-text" rows="3"></textarea>
-  </div>
-  <button type="submit" class="btn btn-secondary">Post</button>
-  <button type="click" class="btn btn-secondary">Delete</button>
-</form>
-
-<script src="./js/blog.js"></script>
