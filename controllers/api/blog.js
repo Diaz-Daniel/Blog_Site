@@ -15,4 +15,39 @@ router.post("/", withAuth, async (req, res) => {
   }
 });
 
+router.put("/:id", withAuth, async (req, res) => {
+  try {
+    const [done] = await Blog.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (done > 0) {
+      res.status(200).end();
+    } else {
+      res.status(400).end();
+    }
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.delete("/:id", withAuth, async (req, res) => {
+  try {
+    const [done] = await Blog.delete({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (done > 0) {
+      res.status(200).end();
+    } else {
+      res.status(400).end();
+    }
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
 module.exports = router;
