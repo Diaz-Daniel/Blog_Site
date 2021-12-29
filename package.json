@@ -5,6 +5,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "publish": "gh-pages -d index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,8 +25,8 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
     "express-session": "^1.17.2",
+    "gh-pages": "^3.2.3",
     "mysql2": "^2.1.0",
     "sequelize": "^5.21.7"
   }
-
 }
