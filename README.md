@@ -18,4 +18,4 @@ To build a CMS-style blog site similar to a Wordpress site, where people can pub
 
 ## Link to Website
 
-- [TechBlog.com](https://diaz-daniel.github.io/Blog_Site/)
+- [TechBlog.com](https://tech-blog-dd.herokuapp.com/)
